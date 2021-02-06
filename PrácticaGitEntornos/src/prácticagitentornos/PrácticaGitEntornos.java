@@ -18,19 +18,23 @@ public class PrácticaGitEntornos {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-
-        int i;
-        int[] numeros = new int[10];
-
-        Scanner sc = new Scanner(System.in);
-
-        for (i = 0; i < numeros.length; i++) {
-            System.out.printf("Introduzca número %d: ", i + 1);
-            numeros[i] = sc.nextInt();
-        }
-        for (i = 0; i < numeros.length; i++) {
-            Arrays.sort(numeros);
-            System.out.println(numeros[i]);
+        {
+            String rep[] = {"1", "2", "3", "4", "5", "6", "7", "7", "7", "6"};
+            for (int i = 0; i < rep.length; i++) {
+                for (int j = 0; j < rep.length - 1; j++) {
+                    if (i != j) {
+                        if (rep[i] == rep[j]) {
+                            rep[i] = "";
+                        }
+                    }
+                }
+            }
+            int n = rep.length;
+            for (int k = 0; k <= n - 1; k++) {
+                if (rep[k] != "") {
+                    System.out.println(rep[k]);
+                }
+            }
         }
     }
 }
