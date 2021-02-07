@@ -18,23 +18,31 @@ public class PrácticaGitEntornos {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        {
-            String rep[] = {"1", "2", "3", "4", "5", "6", "7", "7", "7", "6"};
-            for (int i = 0; i < rep.length; i++) {
-                for (int j = 0; j < rep.length - 1; j++) {
-                    if (i != j) {
-                        if (rep[i] == rep[j]) {
-                            rep[i] = "";
-                        }
-                    }
-                }
+        Scanner teclado=new Scanner(System.in);
+        boolean elNumeroEsta = false;
+
+        int num[]=new int[2];
+        int i;
+        for(i=0;i<num.length;i++){
+            System.out.print("ingrese un numero: ");
+            num[i]=teclado.nextInt();
+        }
+        for(i=0;i<num.length;i++){
+            System.out.println(num[i]);
+        }
+
+        System.out.print("buscar numero: ");
+        int numero;
+        numero=teclado.nextInt();
+
+        for(i=0;i<num.length;i++){
+            if (numero == num[i]) {
+                System.out.println("El numero está");
+                elNumeroEsta = true;
             }
-            int n = rep.length;
-            for (int k = 0; k <= n - 1; k++) {
-                if (rep[k] != "") {
-                    System.out.println(rep[k]);
-                }
-            }
+        }
+        if(elNumeroEsta ==false) {
+            System.out.println("El numero no esta");
         }
     }
 }
